@@ -1,0 +1,21 @@
+.header_text {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .btn {
+    width: 150px;
+    padding: 8px 16px;
+    text-align: center;
+    color: #2a2a2a;
+    background-color: chocolate;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition-duration: 200ms;
+  }
+  
+  .btn:hover {
+    background-color: darkseagreen;
+  }
