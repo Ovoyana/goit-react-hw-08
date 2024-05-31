@@ -8,7 +8,7 @@ export default function HomePage ()  {
       </h1>
       <img
       className={css.image}
-      src="/public/depositphotos_38572411-stock-photo-black-retro-phone.jpg"
+      src="/depositphotos_38572411-stock-photo-black-retro-phone.jpg"
       />
     </div>
   );
