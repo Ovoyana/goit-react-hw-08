@@ -1,13 +1,7 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 70px;
-    border-bottom: 2px solid burlywood;
-    margin-bottom: 30px;
-  }
-  
+
   .nav_link {
+    display: inline-block;
+    padding: 15px;
     color: burlywood;
     font-size: 20px;
     text-decoration: none;
@@ -21,3 +15,15 @@
   .active {
     color: chocolate;
   }
+
+  /* .link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 700;
+    color: #2a363b;
+  }
+  
+  .link.active {
+    color: #e84a5f;
+  } */

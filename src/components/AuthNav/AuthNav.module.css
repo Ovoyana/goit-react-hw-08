@@ -3,13 +3,16 @@
     gap: 30px;
   }
   
-  .nav_link {
-    color: burlywood;
+  .link {
+    display: inline-block;
+    color: chocolate;
     font-size: 20px;
     text-decoration: none;
     transition-duration: 200ms;
     font-weight: bold;
-    &:hover {
-      color: chocolate;
-    }
+  }
+
+    .link:hover {
+      color:crimson;
+  
   }

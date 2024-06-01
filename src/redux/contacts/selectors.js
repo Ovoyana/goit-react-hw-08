@@ -1,12 +1,22 @@
-import { selectContacts } from "./contactsSlice";
-import { selectNameFilter } from "../filters/filtersSlice";
-import { createSelector } from "@reduxjs/toolkit";
+import { selectNameFilter } from '../filters/selectors';
+import { createSelector } from '@reduxjs/toolkit';
+import Fuse from 'fuse.js';
 
+export const selectIsLoading = state => state.contacts.loading;
+export const selectError = state => state.contacts.error;
+export const selectContacts = state => state.contacts.items;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
   (contacts, filter) => {
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
+    if (!filter) {
+      return contacts;
+    }
+    const options = {
+      includeScore: true,
+      keys: ['name', 'number'],
+    };
+    const fuse = new Fuse(contacts, options);
+    const filteredResults = fuse.search(filter);
+    return filteredResults.map(result => result.item);
   }
 );

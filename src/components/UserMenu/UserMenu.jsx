@@ -1,27 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/auth/operations";
-import { NavLink, useNavigate } from "react-router-dom";
-import { selectEmail } from "../../redux/auth/authSlise";
+import { logOut } from "../../redux/auth/operations";
+import { selectUser } from "../../redux/auth/selectors";
 import css from "./UserMenu.module.css";
 
-export default function UserMenu ({ buildLinkClass }) {
+export default function UserMenu() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const userEmail = useSelector(selectEmail);
+  const user = useSelector(selectUser);
+
   function handleLogout() {
-    dispatch(logout());
-    navigate("/login");
+    dispatch(logOut());
   }
   return (
-    <>
-      <NavLink className={buildLinkClass} to="/contacts">
-        Contacts
-      </NavLink>
-      <p className={css.header_text}>Welcome, {userEmail}</p>
-      <button className={css.btn} type="button" onClick={handleLogout}>
+    <div className={css.box}>
+      <p className={css.header_text}>Welcome, {user.name} </p>
+      <button className={css.btn} type="submit" onClick={handleLogout}>
         Logout
       </button>
-    </>
+    </div>
   );
-};
-
+}

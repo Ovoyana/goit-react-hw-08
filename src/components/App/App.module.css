@@ -41,7 +41,7 @@
   color: #888;
 } */
 
-
+/* 
 .box {
   display: flex;
   margin-left: 40px;
@@ -64,4 +64,14 @@
     transform: rotate(-20deg);
     margin-right: 15px;
     color: chocolate;
+  } */
+
+  .container {
+    padding: 16px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 36px;
+    margin-bottom: 10px;
   }
